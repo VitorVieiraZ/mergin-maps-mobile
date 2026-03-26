@@ -85,9 +85,9 @@
 #include "featurelayerpair.h"
 
 #include "inputmapcanvasmap.h"
-#include "mmhighlightitem.h"
 #include "inputmapsettings.h"
 #include "inputmaptransform.h"
+#include "mmhighlightitem.h"
 
 #include "position/positionkit.h"
 #include "scalebarkit.h"

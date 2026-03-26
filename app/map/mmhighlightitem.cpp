@@ -23,7 +23,6 @@
 #include "qgsgeometrycollection.h"
 #include "qgswkbtypes.h"
 
-
 MMHighlightItem::MMHighlightItem( QQuickItem *parent )
   : QQuickItem( parent )
 {
@@ -388,7 +387,11 @@ void MMHighlightItem::setGeometryVariant( const QVariant &variant )
   emit geometryChanged();
 }
 
-InputMapSettings *MMHighlightItem::mapSettings() const { return mMapSettings; }
+InputMapSettings *MMHighlightItem::mapSettings() const
+{
+  return mMapSettings;
+}
+
 void MMHighlightItem::setMapSettings( InputMapSettings *mapSettings )
 {
   if ( mapSettings == mMapSettings )
@@ -406,154 +409,239 @@ void MMHighlightItem::setMapSettings( InputMapSettings *mapSettings )
   emit mapSettingsChanged();
 }
 
-MMHighlightItem::MarkerType MMHighlightItem::markerType() const { return mMarkerType; }
+MMHighlightItem::MarkerType MMHighlightItem::markerType() const
+{
+  return mMarkerType;
+}
+
 void MMHighlightItem::setMarkerType( MarkerType type )
 {
-  if ( type == mMarkerType ) return;
+  if ( type == mMarkerType )
+    return;
   mMarkerType = type;
   markDirty();
   emit markerTypeChanged();
 }
 
-MMHighlightItem::MarkerSize MMHighlightItem::markerSize() const { return mMarkerSize; }
+MMHighlightItem::MarkerSize MMHighlightItem::markerSize() const
+{
+  return mMarkerSize;
+}
+
 void MMHighlightItem::setMarkerSize( MarkerSize size )
 {
-  if ( size == mMarkerSize ) return;
+  if ( size == mMarkerSize )
+    return;
   mMarkerSize = size;
   markDirty();
   emit markerSizeChanged();
 }
 
-QColor MMHighlightItem::markerColor() const { return mMarkerColor; }
+QColor MMHighlightItem::markerColor() const
+{
+  return mMarkerColor;
+}
+
 void MMHighlightItem::setMarkerColor( const QColor &color )
 {
-  if ( color == mMarkerColor ) return;
+  if ( color == mMarkerColor )
+    return;
   mMarkerColor = color;
   markDirty();
   emit markerColorChanged();
 }
 
-QColor MMHighlightItem::markerBorderColor() const { return mMarkerBorderColor; }
+QColor MMHighlightItem::markerBorderColor() const
+{
+  return mMarkerBorderColor;
+}
+
 void MMHighlightItem::setMarkerBorderColor( const QColor &color )
 {
-  if ( color == mMarkerBorderColor ) return;
+  if ( color == mMarkerBorderColor )
+    return;
   mMarkerBorderColor = color;
   markDirty();
   emit markerBorderColorChanged();
 }
 
-qreal MMHighlightItem::markerWidth() const { return mMarkerWidth; }
+qreal MMHighlightItem::markerWidth() const
+{
+  return mMarkerWidth;
+}
+
 void MMHighlightItem::setMarkerWidth( qreal w )
 {
-  if ( qFuzzyCompare( w, mMarkerWidth ) ) return;
+  if ( qFuzzyCompare( w, mMarkerWidth ) )
+    return;
   mMarkerWidth = w;
   markDirty();
   emit markerWidthChanged();
 }
 
-qreal MMHighlightItem::markerHeight() const { return mMarkerHeight; }
+qreal MMHighlightItem::markerHeight() const
+{
+  return mMarkerHeight;
+}
+
 void MMHighlightItem::setMarkerHeight( qreal h )
 {
-  if ( qFuzzyCompare( h, mMarkerHeight ) ) return;
+  if ( qFuzzyCompare( h, mMarkerHeight ) )
+    return;
   mMarkerHeight = h;
   markDirty();
   emit markerHeightChanged();
 }
 
-qreal MMHighlightItem::markerBorderWidth() const { return mMarkerBorderWidth; }
+qreal MMHighlightItem::markerBorderWidth() const
+{
+  return mMarkerBorderWidth;
+}
+
 void MMHighlightItem::setMarkerBorderWidth( qreal w )
 {
-  if ( qFuzzyCompare( w, mMarkerBorderWidth ) ) return;
+  if ( qFuzzyCompare( w, mMarkerBorderWidth ) )
+    return;
   mMarkerBorderWidth = w;
   markDirty();
   emit markerBorderWidthChanged();
 }
 
-MMHighlightItem::LineWidth MMHighlightItem::lineWidth() const { return mLineWidth; }
+MMHighlightItem::LineWidth MMHighlightItem::lineWidth() const
+{
+  return mLineWidth;
+}
+
 void MMHighlightItem::setLineWidth( LineWidth w )
 {
-  if ( w == mLineWidth ) return;
+  if ( w == mLineWidth )
+    return;
   mLineWidth = w;
   markDirty();
   emit lineWidthChanged();
 }
 
-qreal MMHighlightItem::lineBorderWidth() const { return mLineBorderWidth; }
+qreal MMHighlightItem::lineBorderWidth() const
+{
+  return mLineBorderWidth;
+}
+
 void MMHighlightItem::setLineBorderWidth( qreal w )
 {
-  if ( qFuzzyCompare( w, mLineBorderWidth ) ) return;
+  if ( qFuzzyCompare( w, mLineBorderWidth ) )
+    return;
   mLineBorderWidth = w;
   markDirty();
   emit lineBorderWidthChanged();
 }
 
-QColor MMHighlightItem::lineColor() const { return mLineColor; }
+QColor MMHighlightItem::lineColor() const
+{
+  return mLineColor;
+}
+
 void MMHighlightItem::setLineColor( const QColor &color )
 {
-  if ( color == mLineColor ) return;
+  if ( color == mLineColor )
+    return;
   mLineColor = color;
   markDirty();
   emit lineColorChanged();
 }
 
-QColor MMHighlightItem::lineBorderColor() const { return mLineBorderColor; }
+QColor MMHighlightItem::lineBorderColor() const
+{
+  return mLineBorderColor;
+}
+
 void MMHighlightItem::setLineBorderColor( const QColor &color )
 {
-  if ( color == mLineBorderColor ) return;
+  if ( color == mLineBorderColor )
+    return;
   mLineBorderColor = color;
   markDirty();
   emit lineBorderColorChanged();
 }
 
-int MMHighlightItem::lineStrokeStyle() const { return mLineStrokeStyle; }
+int MMHighlightItem::lineStrokeStyle() const
+{
+  return mLineStrokeStyle;
+}
+
 void MMHighlightItem::setLineStrokeStyle( int style )
 {
-  if ( style == mLineStrokeStyle ) return;
+  if ( style == mLineStrokeStyle )
+    return;
   mLineStrokeStyle = style;
   markDirty();
   emit lineStrokeStyleChanged();
 }
 
-QColor MMHighlightItem::polygonFillColor() const { return mPolygonFillColor; }
+QColor MMHighlightItem::polygonFillColor() const
+{
+  return mPolygonFillColor;
+}
+
 void MMHighlightItem::setPolygonFillColor( const QColor &color )
 {
-  if ( color == mPolygonFillColor ) return;
+  if ( color == mPolygonFillColor )
+    return;
   mPolygonFillColor = color;
   markDirty();
   emit polygonFillColorChanged();
 }
 
-QColor MMHighlightItem::polygonRingColor() const { return mPolygonRingColor; }
+QColor MMHighlightItem::polygonRingColor() const
+{
+  return mPolygonRingColor;
+}
+
 void MMHighlightItem::setPolygonRingColor( const QColor &color )
 {
-  if ( color == mPolygonRingColor ) return;
+  if ( color == mPolygonRingColor )
+    return;
   mPolygonRingColor = color;
   markDirty();
   emit polygonRingColorChanged();
 }
 
-QColor MMHighlightItem::polygonRingBorderColor() const { return mPolygonRingBorderColor; }
+QColor MMHighlightItem::polygonRingBorderColor() const
+{
+  return mPolygonRingBorderColor;
+}
+
 void MMHighlightItem::setPolygonRingBorderColor( const QColor &color )
 {
-  if ( color == mPolygonRingBorderColor ) return;
+  if ( color == mPolygonRingBorderColor )
+    return;
   mPolygonRingBorderColor = color;
   markDirty();
   emit polygonRingBorderColorChanged();
 }
 
-qreal MMHighlightItem::polygonRingWidth() const { return mPolygonRingWidth; }
+qreal MMHighlightItem::polygonRingWidth() const
+{
+  return mPolygonRingWidth;
+}
+
 void MMHighlightItem::setPolygonRingWidth( qreal w )
 {
-  if ( qFuzzyCompare( w, mPolygonRingWidth ) ) return;
+  if ( qFuzzyCompare( w, mPolygonRingWidth ) )
+    return;
   mPolygonRingWidth = w;
   markDirty();
   emit polygonRingWidthChanged();
 }
 
-qreal MMHighlightItem::polygonRingBorderWidth() const { return mPolygonRingBorderWidth; }
+qreal MMHighlightItem::polygonRingBorderWidth() const
+{
+  return mPolygonRingBorderWidth;
+}
+
 void MMHighlightItem::setPolygonRingBorderWidth( qreal w )
 {
-  if ( qFuzzyCompare( w, mPolygonRingBorderWidth ) ) return;
+  if ( qFuzzyCompare( w, mPolygonRingBorderWidth ) )
+    return;
   mPolygonRingBorderWidth = w;
   markDirty();
   emit polygonRingBorderWidthChanged();
