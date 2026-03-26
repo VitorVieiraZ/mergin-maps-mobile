@@ -43,7 +43,7 @@ Item {
     realGeometry: mapTool.recordedGeometry
   }
 
-  MMHighlight {
+  MM.MMHighlightItem {
     id: guideline
 
     height: root.map.height
@@ -52,13 +52,13 @@ Item {
     markerColor: __style.deepOceanColor
     lineColor: __style.deepOceanColor
     lineStrokeStyle: ShapePath.DashLine
-    lineWidth: MMHighlight.LineWidths.Narrow
+    lineWidth: MM.MMHighlightItem.Narrow
 
     mapSettings: root.map.mapSettings
     geometry: guidelineController.guidelineGeometry
   }
 
-  MMHighlight {
+  MM.MMHighlightItem {
     id: highlight
 
     height: map.height
@@ -66,13 +66,13 @@ Item {
 
     markerColor: __style.deepOceanColor
     lineColor: __style.deepOceanColor
-    lineWidth: MMHighlight.LineWidths.Narrow
+    lineWidth: MM.MMHighlightItem.Narrow
 
     mapSettings: root.map.mapSettings
     geometry: mapTool.recordedGeometry
   }
 
-  MMHighlight {
+  MM.MMHighlightItem {
     id: existingVerticesHighlight
 
     height: root.map.height
@@ -81,8 +81,8 @@ Item {
     mapSettings: root.map.mapSettings
     geometry: mapTool.existingVertices
 
-    markerType: MMHighlight.MarkerTypes.Circle
-    markerSize: MMHighlight.MarkerSizes.Bigger
+    markerType: MM.MMHighlightItem.Circle
+    markerSize: MM.MMHighlightItem.Bigger
   }
 
   MMMeasureCrosshair {

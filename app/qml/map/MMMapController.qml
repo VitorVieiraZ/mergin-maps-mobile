@@ -349,7 +349,7 @@ Item {
     }
   }
 
-  MMHighlight {
+  MM.MMHighlightItem {
     id: identifyHighlight
 
     visible: root.state === "view"
@@ -397,13 +397,13 @@ Item {
           trackedGeometry: __inputUtils.transformGeometryToMapWithCRS( trackingManager.trackedGeometry, trackingManager.crs(), mapCanvas.mapSettings )
         }
 
-        MMHighlight {
+        MM.MMHighlightItem {
           height: mapCanvas.height
           width: mapCanvas.width
 
           markerColor: __style.sunsetColor
           lineColor: __style.sunsetColor
-          lineWidth: MMHighlight.LineWidths.Narrow
+          lineWidth: MM.MMHighlightItem.Narrow
 
           mapSettings: mapCanvas.mapSettings
           geometry: trackingHighlight.highlightGeometry
@@ -1021,14 +1021,14 @@ Item {
         mapSettings: mapCanvas.mapSettings
       }
 
-      MMHighlight {
+      MM.MMHighlightItem {
         id: multiEditHighlight
 
         height: mapCanvas.height
         width: mapCanvas.width
         visible: root.state === "multiSelect"
 
-        markerType: MMHighlight.MarkerTypes.Circle
+        markerType: MM.MMHighlightItem.Circle
         mapSettings: mapCanvas.mapSettings
         geometry: multiEditManager.geometry
       }
@@ -1057,14 +1057,14 @@ Item {
         mapSettings: mapCanvas.mapSettings
       }
 
-      MMHighlight {
+      MM.MMHighlightItem {
         id: sketchesHighlight
 
         height: mapCanvas.height
         width: mapCanvas.width
 
         lineColor: sketchingController.eraserActive ? "red" : sketchingController.activeColor
-        lineWidth: sketchingController.eraserActive ? MMHighlight.LineWidths.Narrow : MMHighlight.LineWidths.Normal
+        lineWidth: sketchingController.eraserActive ? MM.MMHighlightItem.Narrow : MM.MMHighlightItem.NormalLine
 
         mapSettings: mapCanvas.mapSettings
         geometry: sketchingController.highlightGeometry

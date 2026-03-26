@@ -113,7 +113,7 @@ Item {
     activeRing: mapTool.activeRing
   }
 
-  MMHighlight {
+  MM.MMHighlightItem {
     id: highlight
 
     height: root.map.height
@@ -173,7 +173,7 @@ Item {
     shouldUseSnapping: !mapTool.isUsingPosition
   }
 
-  MMHighlight {
+  MM.MMHighlightItem {
     id: existingVerticesHighlight
 
     height: root.map.height
@@ -182,8 +182,8 @@ Item {
     mapSettings: root.map.mapSettings
     geometry: __inputUtils.transformGeometryToMapWithLayer( mapTool.existingVertices, __activeLayer.vectorLayer, root.map.mapSettings )
 
-    markerType: MMHighlight.MarkerTypes.Circle
-    markerSize: MMHighlight.MarkerSizes.Bigger
+    markerType: MM.MMHighlightItem.Circle
+    markerSize: MM.MMHighlightItem.Bigger
   }
 
   MMToolbar {
@@ -321,7 +321,7 @@ Item {
   Component {
     id:  handlesHighlightComponent
 
-    MMHighlight {
+    MM.MMHighlightItem {
       id: handlesHighlight
 
       height: root.map.height
@@ -330,20 +330,20 @@ Item {
       mapSettings: root.map.mapSettings
       geometry: __inputUtils.transformGeometryToMapWithLayer( mapTool.handles, __activeLayer.vectorLayer, root.map.mapSettings )
       lineStrokeStyle: ShapePath.DashLine
-      lineWidth: MMHighlight.LineWidths.Narrow
+      lineWidth: MM.MMHighlightItem.Narrow
     }
   }
 
   Component {
     id: guidelineHighlightComponent
 
-    MMHighlight {
+    MM.MMHighlightItem {
       id: guideline
 
       height: root.map.height
       width: root.map.width
 
-      lineWidth: MMHighlight.LineWidths.Narrow
+      lineWidth: MM.MMHighlightItem.Narrow
       lineStrokeStyle: ShapePath.DashLine
 
       mapSettings: root.map.mapSettings
@@ -354,7 +354,7 @@ Item {
   Component {
     id: midSegmentsHighlightComponent
 
-    MMHighlight {
+    MM.MMHighlightItem {
       id: midSegmentsHighlight
 
       height: root.map.height
@@ -363,7 +363,7 @@ Item {
       mapSettings: root.map.mapSettings
       geometry: __inputUtils.transformGeometryToMapWithLayer( mapTool.midPoints, __activeLayer.vectorLayer, root.map.mapSettings )
 
-      markerType: MMHighlight.MarkerTypes.Circle
+      markerType: MM.MMHighlightItem.Circle
       markerBorderColor: __style.grapeColor
     }
   }
