@@ -49,10 +49,10 @@ void MapSketchingController::updateHighlight( const QPointF &oldPoint, const QPo
     mScreenPoints = QgsGeometry( new QgsLineString( { QgsPointXY( oldPoint.x(), oldPoint.y() ) } ) );
   }
 
-  // TODO: append instead of insert to zero
-  mScreenPoints.insertVertex( newPoint.x(), newPoint.y(), 0 );
+  int numVerts = mScreenPoints.constGet()->nCoordinates();
+  mScreenPoints.insertVertex( newPoint.x(), newPoint.y(), numVerts );
   const QgsPoint p1 = mMapSettings->screenToCoordinate( newPoint );
-  mHighlight.insertVertex( p1, 0 );
+  mHighlight.insertVertex( p1, numVerts );
 
   emit highlightGeometryChanged();
 }

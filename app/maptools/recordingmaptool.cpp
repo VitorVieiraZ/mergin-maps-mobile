@@ -28,9 +28,13 @@
 RecordingMapTool::RecordingMapTool( QObject *parent )
   : AbstractMapTool{parent}
 {
+  mCollectVerticesTimer.setSingleShot( true );
+  mCollectVerticesTimer.setInterval( 0 );
+  connect( &mCollectVerticesTimer, &QTimer::timeout, this, &RecordingMapTool::collectVertices );
+
   connect( this, &RecordingMapTool::activeFeatureChanged, this, &RecordingMapTool::prepareEditing );
   connect( this, &RecordingMapTool::recordedGeometryChanged, this, &RecordingMapTool::completeEditOperation );
-  connect( this, &RecordingMapTool::recordedGeometryChanged, this, &RecordingMapTool::collectVertices );
+  connect( this, &RecordingMapTool::recordedGeometryChanged, this, [this]() { mCollectVerticesTimer.start(); } );
   connect( this, &RecordingMapTool::activeVertexChanged, this, &RecordingMapTool::updateVisibleItems );
   connect( this, &RecordingMapTool::activeVertexChanged, this, &RecordingMapTool::updateActiveVertexGeometry );
   connect( this, &RecordingMapTool::stateChanged, this, &RecordingMapTool::updateVisibleItems );

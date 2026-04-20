@@ -44,7 +44,7 @@ Item {
     realGeometry: __inputUtils.transformGeometryToMapWithLayer( mapTool.recordedGeometry, __activeLayer.vectorLayer, root.map.mapSettings )
   }
 
-  MMHighlight {
+  MM.MMHighlightItem {
     id: guideline
 
     height: root.map.height
@@ -53,13 +53,13 @@ Item {
     markerColor: __style.deepOceanColor
     lineColor: __style.deepOceanColor
     lineStrokeStyle: ShapePath.DashLine
-    lineWidth: MMHighlight.LineWidths.Narrow
+    lineWidth: MM.MMHighlightItem.Narrow
 
     mapSettings: root.map.mapSettings
     geometry: guidelineController.guidelineGeometry
   }
 
-  MMHighlight {
+  MM.MMHighlightItem {
     id: highlight
 
     height: map.height
@@ -67,7 +67,7 @@ Item {
 
     markerColor: __style.deepOceanColor
     lineColor: __style.deepOceanColor
-    lineWidth: MMHighlight.LineWidths.Narrow
+    lineWidth: MM.MMHighlightItem.Narrow
 
     mapSettings: root.map.mapSettings
     geometry: __inputUtils.transformGeometryToMapWithLayer( mapTool.recordedGeometry, __activeLayer.vectorLayer, root.map.mapSettings )

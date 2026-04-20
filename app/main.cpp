@@ -87,6 +87,7 @@
 #include "inputmapcanvasmap.h"
 #include "inputmapsettings.h"
 #include "inputmaptransform.h"
+#include "mmhighlightitem.h"
 
 #include "position/positionkit.h"
 #include "scalebarkit.h"
@@ -349,6 +350,7 @@ void initDeclarative()
   qmlRegisterType< InputMapCanvasMap >( "mm", 1, 0, "MapCanvasMap" );
   qmlRegisterType< InputMapSettings >( "mm", 1, 0, "MapSettings" );
   qmlRegisterType< InputMapTransform >( "mm", 1, 0, "MapTransform" );
+  qmlRegisterType< MMHighlightItem >( "mm", 1, 0, "MMHighlightItem" );
   qmlRegisterUncreatableType< AbstractPositionProvider >( "mm", 1, 0, "PositionProvider", "Must be instantiated via its construct method" );
 
   // map tools

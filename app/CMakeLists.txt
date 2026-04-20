@@ -24,6 +24,7 @@ set(MM_SRCS
     map/inputmapcanvasmap.cpp
     map/inputmapsettings.cpp
     map/inputmaptransform.cpp
+    map/mmhighlightitem.cpp
     maptools/abstractmaptool.cpp
     maptools/recordingmaptool.cpp
     maptools/splittingmaptool.cpp
@@ -114,6 +115,7 @@ set(MM_HDRS
     map/inputmapcanvasmap.h
     map/inputmapsettings.h
     map/inputmaptransform.h
+    map/mmhighlightitem.h
     maptools/abstractmaptool.h
     maptools/recordingmaptool.h
     maptools/splittingmaptool.h

@@ -13,6 +13,7 @@
 #include "abstractmaptool.h"
 
 #include <QObject>
+#include <QTimer>
 #include <qglobal.h>
 
 #include "qgsvertexid.h"
@@ -366,6 +367,8 @@ class RecordingMapTool : public AbstractMapTool
     QgsFeature mActiveFeature;
 
     int mMinUndoStackIndex = 0; // We can not undo more than this index
+
+    QTimer mCollectVerticesTimer;
 };
 
 #endif // RECORDINGMAPTOOL_H
